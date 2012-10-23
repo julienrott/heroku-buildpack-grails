@@ -119,7 +119,7 @@ echo "-----> Executing $COMPILECMD"
 eval "$COMPILECMD" | sed -u 's/^/       /'
 check_build_status
 
-BUILDCMD="grails $GRAILS_ENV $BUILDCMD_OPT -Divy.default.ivy.user.dir=$CACHE_DIR war --non-interactive"
+BUILDCMD="grails -Dgrails.env=$GRAILS_ENV $BUILDCMD_OPT -Divy.default.ivy.user.dir=$CACHE_DIR war --non-interactive"
 echo "-----> Executing $BUILDCMD"
 eval "$BUILDCMD" | sed -u 's/^/       /'
 check_build_status
